@@ -1,0 +1,29 @@
+<div class="container">
+    <h1>New Student</h1>
+    <div class="content-button text-right">
+        <a [routerLink]="['/students']" class="btn btn-danger pointer">Return</a>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <form (ngSubmit)="guardar()" #forma="ngForm">
+                <label>Name</label>
+                <input type="text" name="name" class="form-control" [(ngModel)]="newStudent.first_name" required>
+                <label>Last Name</label>
+                <input type="text" name="lastName" class="form-control" [(ngModel)]="newStudent.last_name" required>
+                <label>Last Name Second</label>
+                <input type="text" name="lastNameSecond" class="form-control" [(ngModel)]="newStudent.last_name_second" required>
+                <label>E-mail</label>
+                <input type="email" name="mail" class="form-control" [(ngModel)]="newStudent.email" required>
+                <label>Phone</label>
+                <input type="number" name="phone" class="form-control" [(ngModel)]="newStudent.phone" required>
+                <label>Birth Date</label>
+                <input type="date" name="date" class="form-control" [(ngModel)]="newStudent.birth_date" required>
+                <div class="form-group content-button">
+                    <button [disabled]="!forma.valid" type="submit" name="button" class="btn btn-primary">
+                        Save Student
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

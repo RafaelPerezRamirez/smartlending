@@ -1,0 +1,26 @@
+<div class="container students-container">
+    <div class="content-button text-right">
+        <a [routerLink]="['/newStudent','new']" class="btn btn-primary pointer">New Student</a>
+    </div>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Last Name Second</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of students">
+                <td>{{student.first_name}}</td>
+                <td>{{student.last_name}}</td>
+                <td>{{student.last_name_second}}</td>
+                <td>
+                    <button class="btn btn-primary" [routerLink]="['/newStudent',student.id]">Edit</button>
+                    <button class="btn btn-danger" (click)="delete(student.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
